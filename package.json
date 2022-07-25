@@ -8,6 +8,7 @@
 		"type": "git",
 		"url": "https://github.com/Vikasdubey0551/jupyterlab-browser.git"
 	},
+	"publisher": "Vikasdubey0551",
 	"engines": {
 		"vscode": "^1.69.0"
 	},
