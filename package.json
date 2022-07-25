@@ -5,7 +5,7 @@
 	"version": "0.0.1",
 	"icon": "https://github.com/Vikasdubey0551/jupyterlab/blob/main/images/icon.png",
 	"engines": {
-		"vscode": "^1.51.0"
+		"vscode": "^1.69.0"
 	},
 	"categories": [
 		"Other"
