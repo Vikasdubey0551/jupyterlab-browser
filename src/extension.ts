@@ -33,7 +33,6 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 
 	const openFileInBrowser = 'jupyterlab-browser.openFileInBrowser';
 	subscriptions.push(vscode.commands.registerCommand(openFileInBrowser, () => {
-		let terminal = vscode.window.createTerminal("tmp-terminal");
 		const jupyter = isJupyterServerRunning();
 		if (!jupyter){
 		let terminal = vscode.window.createTerminal("Jupyterlab");
@@ -42,14 +41,10 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 		}
 		else{
 			let existingSession = execSync("jupyter-lab list | grep 'http' | tail -n 1 | cut -d '?' -f1").toString().trim();
-			vscode.env.openExternal(vscode.Uri.parse(existingSession + 'lab/tree/test.py'));
+			let file = vscode.window.activeTextEditor?.document.fileName.toString().split('/').at(-1);
+			vscode.env.openExternal(vscode.Uri.parse(existingSession + 'lab/tree/' + file));
 
-		}
-	// let command = "sc=`jupyter-lab list | grep 'http' | wc -l`; jl=$(jupyter-lab list | grep 'http' | tail -n 1 | cut -d '?' -f1); jl+='lab/tree/test.py'; if [[ $((sc)) -ge 1 ]]; then open '$jl'; sleep 3; exit; else nohup jupyter-lab --port 5081 & ; sleep 2; open http://localhost:5081/lab/tree/test.py; sleep 3; exit;fi";
-	// terminal.sendText(command);
-	console.log();
-
-	
+		}	
 
 	}));
 
