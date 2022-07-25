@@ -26,7 +26,6 @@ Only requirement is to install `jupyterlab` prior to installing the extension.
 
 ## Known Issues
 
-Each click on the `Jupylab-browser` icon creates one kernel.
 
 ## Release Notes
 
@@ -38,6 +37,17 @@ Initial release of `Jupyterlab-Browser` vscode extension.
 ### 0.0.2
 
 Readme updates.
+
+### 0.0.3
+
+* Added a functionality to open any notebook/file directly in browser.
+* Added a fix to avoid opening multiple jupyter sessions.
+
+
+### 0.0.4
+
+* updated icons
+* added condition for icon to appear only in saved files. 
 
 
 -----------------------------------------------------------------------------------------------------------

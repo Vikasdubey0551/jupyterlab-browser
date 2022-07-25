@@ -3,9 +3,11 @@
  *--------------------------------------------------------*/
 
 
-import { time } from 'console';
+
 import * as vscode from 'vscode';
-const { execSync } = require('node:child_process')
+const { execSync } = require('node:child_process');
+const { platform} = require('os');
+
 
 let myStatusBarItem: vscode.StatusBarItem;
 
@@ -33,10 +35,24 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 
 	const openFileInBrowser = 'jupyterlab-browser.openFileInBrowser';
 	subscriptions.push(vscode.commands.registerCommand(openFileInBrowser, () => {
-		const jupyter = isJupyterServerRunning();
+		let jupyter = isJupyterServerRunning();
 		if (!jupyter){
 		let terminal = vscode.window.createTerminal("Jupyterlab");
-		terminal.sendText("jupyter-lab");
+		terminal.sendText("jupyter-lab --port 5301");
+				
+		let file = vscode.window.activeTextEditor?.document.fileName.toString().split('/').at(-1);
+		let url = 'http://localhost:5301/lab/tree/' + file;
+		let tmpTerminal = vscode.window.createTerminal("tmp");
+
+		if (platform() === 'darwin'){
+			tmpTerminal.sendText("sleep 3; open " + url);
+		}
+		else {
+			tmpTerminal.sendText("sleep 3; xdg-open " + url);
+		}
+
+		tmpTerminal.sendText("sleep 2;exit");
+		
 		terminal.hide();
 		}
 		else{
@@ -51,6 +67,8 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 	updateStatusBarItem();
 
 }
+
+
 
 function isJupyterServerRunning() {
 	let data = execSync("jupyter-lab list | grep 'http' | wc -l").toString().trim();
