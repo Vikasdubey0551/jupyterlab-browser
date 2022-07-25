@@ -48,8 +48,8 @@
 				"command": "jupyterlab-browser.openFileInBrowser",
 				"title": "Jupyterlab-Browser: Open Current File in Browser",
 				"icon": {
-					"light": "images/icon-light.svg",
-					"dark": "images/icon-dark.svg"
+					"light": "images/icon.png",
+					"dark": "images/icon.png"
 				  }
 			}
 		]
