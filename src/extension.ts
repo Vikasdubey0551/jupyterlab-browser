@@ -9,7 +9,7 @@ let myStatusBarItem: vscode.StatusBarItem;
 
 export function activate({ subscriptions }: vscode.ExtensionContext) {
 
-	const myCommandId = 'jupyterlab.startServer';
+	const myCommandId = 'jupyterlab-browser.startServer';
 	subscriptions.push(vscode.commands.registerCommand(myCommandId, () => {
 		let terminal = vscode.window.createTerminal("Jupyterlab");
 		terminal.sendText("jupyter-lab");
