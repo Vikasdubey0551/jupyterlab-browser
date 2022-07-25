@@ -7,12 +7,12 @@
 * You can find an icon to open **Jupyterlab-Browser** on the bottom-right corner of vscode (in the status bar), as shown below:
 
 
-![Find jupyterlab1](images/find_jupyterlab_browser1.png)
+![Find jupyterlab1](https://github.com/Vikasdubey0551/jupyterlab-browser/blob/main/images/find_jupyterlab_browser1.png)
 
 
 * Alternatively, you can find `Start Jupyterlab Server` by pressing `CMD/CTRL + SHIFT + P`
 
-![Find jupyterlab2](images/find_jupyterlab_browser2.png)
+![Find jupyterlab2](https://github.com/Vikasdubey0551/jupyterlab-browser/blob/main/images/find_jupyterlab_browser2.png)
 
 
 ## Requirements

@@ -3,7 +3,11 @@
 	"displayName": "Jupyterlab-Browser",
 	"description": "A small extension to start jupyterlab session in the browser",
 	"version": "0.0.1",
-	"icon": "https://github.com/Vikasdubey0551/jupyterlab/blob/main/images/icon.png",
+	"icon": "images/icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Vikasdubey0551/jupyterlab-browser.git"
+	},
 	"engines": {
 		"vscode": "^1.69.0"
 	},
@@ -11,7 +15,8 @@
 		"Other"
 	],
 	"activationEvents": [
-        "*"
+        "onStartupFinished",
+		"onCommand:jupyterlab-browser.startServer"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
