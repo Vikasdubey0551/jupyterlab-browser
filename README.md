@@ -79,5 +79,13 @@ Only requirement is to install `jupyterlab` prior to installing the extension.
 ### 0.0.7
 
 * Removing default port to avoid token.
+
+### 0.0.7-0.0.8
+
+* Removing default port to avoid token.
+
+### 0.0.9-0.0.10
+
+* Increase the manual delay to avoid unusual circumstances.
 -----------------------------------------------------------------------------------------------------------
 

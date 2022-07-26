@@ -38,18 +38,20 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 		let jupyter = isJupyterServerRunning();
 		if (!jupyter){
 		let terminal = vscode.window.createTerminal("Jupyterlab");
-		terminal.sendText("jupyter-lab");
-				
-		let existingSession = execSync("jupyter-lab list | grep 'http' | tail -n 1 | cut -d '?' -f1").toString().trim();
+		terminal.sendText("jupyter-lab --port 31284");
+
+		
+	
 		let file = vscode.window.activeTextEditor?.document.fileName.toString().split('/').at(-1);
-		let url = existingSession + file;
+		let url = "http://localhost:31284/lab/tree/" + file;
+	
 		let tmpTerminal = vscode.window.createTerminal("tmp");
 
 		if (platform() === 'darwin'){
-			tmpTerminal.sendText("sleep 5; open " + url);
+			tmpTerminal.sendText("sleep 10; open " + url);
 		}
 		else {
-			tmpTerminal.sendText("sleep 5; xdg-open " + url);
+			tmpTerminal.sendText("sleep 10; xdg-open " + url);
 		}
 
 		tmpTerminal.sendText("sleep 2;exit");
