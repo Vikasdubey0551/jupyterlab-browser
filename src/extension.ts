@@ -3,10 +3,8 @@
  *--------------------------------------------------------*/
 
 
-
 import * as vscode from 'vscode';
 const { execSync } = require('node:child_process');
-
 
 let myStatusBarItem: vscode.StatusBarItem;
 
@@ -38,14 +36,15 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 		if (!jupyter){
 		let terminal = vscode.window.createTerminal("Jupyterlab");
 		terminal.sendText("jupyter-lab --no-browser");
-		vscode.window.showInformationMessage("No session was found. So, started one. \nTry again in 5 seconds");	
+		vscode.window.showInformationMessage("No session was found. So, started one. Try again in 5 seconds.");	
 		}
 		else{
 			let existingSession = execSync("jupyter-lab list | grep 'http' | tail -n 1 | cut -d ' ' -f1").toString().trim();
 			let token = existingSession.split("?").at(-1);
 			let session = existingSession.split("?").at(0);
-			let file = vscode.window.activeTextEditor?.document.fileName.toString().split('/').at(-1);
-			vscode.env.openExternal(vscode.Uri.parse(session + 'lab/tree/' + file + '?' + token));
+			let file = vscode.window.activeTextEditor?.document.uri.fsPath;
+			let relativeFilePath = vscode.workspace.asRelativePath(file as string);
+			vscode.env.openExternal(vscode.Uri.parse(session + 'lab/tree/' + relativeFilePath + '?' + token));
 		}	
 
 	}));
@@ -53,7 +52,6 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 	updateStatusBarItem();
 
 }
-
 
 
 function isJupyterServerRunning() {
@@ -65,7 +63,6 @@ function isJupyterServerRunning() {
 	}
 	return jupyterServerRunning;
 } 
-
 
 
 function updateStatusBarItem(): void {

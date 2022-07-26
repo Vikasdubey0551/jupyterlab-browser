@@ -37,6 +37,10 @@
 
 * Increase the manual delay to avoid unusual circumstances.
 
-### 0.0.13
+### 0.0.13-0.0.14
 
 * Updated existing apporoach for opening directly to jupyter-lab. Removed delay idea.
+
+### 0.0.15
+
+* Added capability of relative path detection.
