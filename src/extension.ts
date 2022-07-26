@@ -6,7 +6,6 @@
 
 import * as vscode from 'vscode';
 const { execSync } = require('node:child_process');
-const { platform} = require('os');
 
 
 let myStatusBarItem: vscode.StatusBarItem;
@@ -38,31 +37,15 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 		let jupyter = isJupyterServerRunning();
 		if (!jupyter){
 		let terminal = vscode.window.createTerminal("Jupyterlab");
-		terminal.sendText("jupyter-lab --port 31284");
-
-		
-	
-		let file = vscode.window.activeTextEditor?.document.fileName.toString().split('/').at(-1);
-		let url = "http://localhost:31284/lab/tree/" + file;
-	
-		let tmpTerminal = vscode.window.createTerminal("tmp");
-
-		if (platform() === 'darwin'){
-			tmpTerminal.sendText("sleep 10; open " + url);
-		}
-		else {
-			tmpTerminal.sendText("sleep 10; xdg-open " + url);
-		}
-
-		tmpTerminal.sendText("sleep 2;exit");
-		
-		terminal.hide();
+		terminal.sendText("jupyter-lab --no-browser");
+		vscode.window.showInformationMessage("No session was found. So, started one. \nTry again in 5 seconds");	
 		}
 		else{
-			let existingSession = execSync("jupyter-lab list | grep 'http' | tail -n 1 | cut -d '?' -f1").toString().trim();
+			let existingSession = execSync("jupyter-lab list | grep 'http' | tail -n 1 | cut -d ' ' -f1").toString().trim();
+			let token = existingSession.split("?").at(-1);
+			let session = existingSession.split("?").at(0);
 			let file = vscode.window.activeTextEditor?.document.fileName.toString().split('/').at(-1);
-			vscode.env.openExternal(vscode.Uri.parse(existingSession + 'lab/tree/' + file));
-
+			vscode.env.openExternal(vscode.Uri.parse(session + 'lab/tree/' + file + '?' + token));
 		}	
 
 	}));

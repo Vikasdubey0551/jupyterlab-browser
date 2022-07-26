@@ -33,6 +33,10 @@
 
 * Removing default port to avoid token.
 
-### 0.0.9-0.0.10
+### 0.0.9-0.0.12
 
 * Increase the manual delay to avoid unusual circumstances.
+
+### 0.0.13
+
+* Updated existing apporoach for opening directly to jupyter-lab. Removed delay idea.
