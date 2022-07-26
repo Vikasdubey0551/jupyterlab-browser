@@ -1,8 +1,8 @@
 {
   "name": "jupyterlab-browser",
 	"displayName": "Jupyterlab-Browser",
-	"description": "A small extension to start jupyterlab session in the browser",
-	"version": "0.0.4",
+	"description": "A small extension to open any file in jupyterlab or start jupyterlab session in browser",
+	"version": "0.0.5",
 	"icon": "images/icon.png",
 	"repository": {
 		"type": "git",
