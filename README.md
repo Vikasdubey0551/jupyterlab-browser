@@ -1,12 +1,12 @@
 # Jupyterlab-Browser VSCode extension
 
-**Jupyterlab-Browser** is a very simple vscode extension, which allows to quickly open files in Jupyterlab or start Jupyterlab session in a browser with a single click in VSCode. 
+**Jupyterlab-Browser** is a very simple extension, which allows you to quickly open files in Jupyterlab or start Jupyterlab session in a browser with a single click in VSCode. 
 
 ## Features
 
 ### Opening any notebook/script in jupyterlab:
 
-* You can find icon to open a `notebook` icon on the top right corner of any notebook or file to open in it in jupyterlab, as show below:
+* You can find a `notebook` icon on the top right corner of any notebook or file. Click to open in it in jupyterlab, as show below:
 
 <center>
     <img src="images/open-in-jupyterlab.png">
@@ -52,14 +52,12 @@ Only requirement is to install `jupyterlab` prior to installing the extension.
 
 > `pip install jupyterlab`
 
-## Extension Settings
-
 
 ## Known Issues
 
+Response time is a bit slow. Takes about 2-3 seconds to work.
 
 ## Release Notes
-
 
 ### 0.0.1
 
