@@ -27,3 +27,8 @@
 ### 0.0.6
 
 * Changed the default port to 8888 to ensure compaitability with remote machine.
+
+
+### 0.0.7
+
+* Removing default port to avoid token.
