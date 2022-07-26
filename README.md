@@ -8,11 +8,11 @@
 
 * You can find icon to open a `notebook` icon on the top right corner of any notebook or file to open in it in jupyterlab, as show below:
 
-![open in Jupyterlab](images/open-in-jupyterlab-2.png)
-
-> Opening any notebook/script in jupyterlab:
-
 ![open in Jupyterlab](images/open-in-jupyterlab.png)
+
+> **Opening any notebook/script in jupyterlab**:
+
+![open in Jupyterlab](images/open-in-jupyterlab-2.png)
 
 * Alternatively, you can find `Jupyterlab Browser: Open Current File In Jupyter` by pressing `CMD/CTRL + SHIFT + P`
 
