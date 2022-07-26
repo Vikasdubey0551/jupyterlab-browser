@@ -72,5 +72,9 @@ Only requirement is to install `jupyterlab` prior to installing the extension.
 * Updated Readme and the package description.
 
 
+### 0.0.6
+
+* Changed the default port to 8888 to ensure compaitability with remote machine.
+
 -----------------------------------------------------------------------------------------------------------
 
