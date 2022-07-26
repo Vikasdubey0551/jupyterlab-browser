@@ -38,10 +38,10 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 		let jupyter = isJupyterServerRunning();
 		if (!jupyter){
 		let terminal = vscode.window.createTerminal("Jupyterlab");
-		terminal.sendText("jupyter-lab --port 5301");
+		terminal.sendText("jupyter-lab --port 8888");
 				
 		let file = vscode.window.activeTextEditor?.document.fileName.toString().split('/').at(-1);
-		let url = 'http://localhost:5301/lab/tree/' + file;
+		let url = 'http://localhost:8888/lab/tree/' + file;
 		let tmpTerminal = vscode.window.createTerminal("tmp");
 
 		if (platform() === 'darwin'){
