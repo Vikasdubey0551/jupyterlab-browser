@@ -8,15 +8,24 @@
 
 * You can find icon to open a `notebook` icon on the top right corner of any notebook or file to open in it in jupyterlab, as show below:
 
-![open in Jupyterlab](images/open-in-jupyterlab.png)
+<center>
+    <img src="images/open-in-jupyterlab.png">
+</center>
+
 
 > **Opening any notebook/script in jupyterlab**:
 
-![open in Jupyterlab](images/open-in-jupyterlab-2.png)
+<center>
+    <img src="images/open-in-jupyterlab-2.png">
+</center>
+
+
 
 * Alternatively, you can find `Jupyterlab Browser: Open Current File In Jupyter` by pressing `CMD/CTRL + SHIFT + P`
 
-![open in Jupyterlab](images/open-in-jupyterlab-3.png)
+<center>
+    <img src="images/open-in-jupyterlab-3.png">
+</center>
 
 
 ### Start Jupyterlab session in Browser:
@@ -24,14 +33,17 @@
 * You can find an icon to open **Jupyterlab-Browser** on the bottom-right corner of vscode to start Jupyterlab session (in the status bar), as shown below:
 
 
-![Find jupyterlab1](images/find_jupyterlab_browser1.png)
-
+<center>
+    <img src="images/find_jupyterlab_browser1.png">
+</center>
 
 
 
 * Alternatively, you can find `Jupyterlab Browser:  Start Jupyterlab Server` by pressing `CMD/CTRL + SHIFT + P`
 
-![Find jupyterlab2](images/find_jupyterlab_browser2.png)
+<center>
+    <img src="images/find_jupyterlab_browser2.png">
+</center>
 
 
 ## Requirements
