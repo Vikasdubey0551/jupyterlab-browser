@@ -29,6 +29,10 @@
 * Changed the default port to 8888 to ensure compaitability with remote machine.
 
 
-### 0.0.7
+### 0.0.7-0.0.8
 
 * Removing default port to avoid token.
+
+### 0.0.9
+
+* Increase the manual delay to avoid unusual circumstances.

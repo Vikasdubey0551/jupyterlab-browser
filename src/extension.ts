@@ -46,10 +46,10 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 		let tmpTerminal = vscode.window.createTerminal("tmp");
 
 		if (platform() === 'darwin'){
-			tmpTerminal.sendText("sleep 3; open " + url);
+			tmpTerminal.sendText("sleep 5; open " + url);
 		}
 		else {
-			tmpTerminal.sendText("sleep 3; xdg-open " + url);
+			tmpTerminal.sendText("sleep 5; xdg-open " + url);
 		}
 
 		tmpTerminal.sendText("sleep 2;exit");
