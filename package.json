@@ -2,7 +2,7 @@
   "name": "jupyterlab-browser",
 	"displayName": "Jupyterlab-Browser",
 	"description": "A small extension to open any file in Jupyterlab or start Jupyterlab session in browser",
-	"version": "0.0.16",
+	"version": "0.0.17",
 	"icon": "images/icon.png",
 	"repository": {
 		"type": "git",
@@ -48,8 +48,8 @@
 				"command": "jupyterlab-browser.openFileInBrowser",
 				"title": "Jupyterlab-Browser: Open Current File in Browser",
 				"icon": {
-					"light": "images/icon-light.png",
-					"dark": "images/icon-dark.png"
+					"light": "images/icon-light.svg",
+					"dark": "images/icon-dark.svg"
 				  }
 			}
 		]
