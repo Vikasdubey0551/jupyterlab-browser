@@ -45,6 +45,6 @@
 
 * Added capability of relative path detection.
 
-### 0.0.16-0.0.19
+### 0.0.16-0.0.20
 
 * Small icon improvements.
