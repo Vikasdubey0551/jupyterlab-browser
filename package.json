@@ -1,84 +1,87 @@
 {
   "name": "jupyterlab-browser",
-	"displayName": "Jupyterlab-Browser",
-	"description": "A small extension to open any file in Jupyterlab or start Jupyterlab session in browser",
-	"version": "0.0.17",
-	"icon": "images/icon.png",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Vikasdubey0551/jupyterlab-browser.git"
-	},
-	"publisher": "Vikasdubey0551",
-	"engines": {
-		"vscode": "^1.69.0"
-	},
-	"keywords": [
-		"Jupyterlab",
-		"Jupyter-notebook",
-		"Data Science",
-		"Notebook",
-		"Python",
-		"Jupyter"
-	],
-	"categories": [
-		"Data Science"
-	],
-	"activationEvents": [
-        "onStartupFinished",
-		"onCommand:jupyterlab-browser.startServer",
-		"onCommand:jupyterlab-browser.openFileInBrowser"
-	],
-	"main": "./dist/extension.js",
-	"contributes": {
-		"menus": {
-			"editor/title": [
-			  {
-				"when": "editorIsOpen == true && activeEditorIsDirty == false",
-				"command": "jupyterlab-browser.openFileInBrowser",
-				"group": "navigation"
-			  }
-			]
-		  },
-		  "commands": [
-			{
-				"command": "jupyterlab-browser.startServer",
-				"title": "Jupyterlab-Browser: Start Jupyterlab Server"
-			},
-			{
-				"command": "jupyterlab-browser.openFileInBrowser",
-				"title": "Jupyterlab-Browser: Open Current File in Browser",
-				"icon": {
-					"light": "images/icon-light.svg",
-					"dark": "images/icon-dark.svg"
-				  }
-			}
-		]
-		},
-	"scripts": {
-		"vscode:prepublish": "npm run package",
-		"compile": "webpack",
-		"watch": "webpack --watch",
-		"package": "webpack --mode production --devtool hidden-source-map",
-		"compile-tests": "tsc -p . --outDir out",
-		"watch-tests": "tsc -p . -w --outDir out",
-		"pretest": "npm run compile-tests && npm run compile && npm run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.69.0",
-		"@types/glob": "^7.2.0",
-		"@types/mocha": "^9.1.1",
-		"@types/node": "16.x",
-		"@typescript-eslint/eslint-plugin": "^5.30.0",
-		"@typescript-eslint/parser": "^5.30.0",
-		"eslint": "^8.18.0",
-		"glob": "^8.0.3",
-		"mocha": "^10.0.0",
-		"typescript": "^4.7.4",
-		"ts-loader": "^9.3.1",
-		"webpack": "^5.73.0",
-		"webpack-cli": "^4.10.0",
-		"@vscode/test-electron": "^2.1.5"
-	}
+  "displayName": "Jupyterlab-Browser",
+  "description": "A small extension to open any file in Jupyterlab or start Jupyterlab session in browser",
+  "version": "0.0.19",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vikasdubey0551/jupyterlab-browser.git"
+  },
+  "publisher": "Vikasdubey0551",
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "keywords": [
+    "Jupyterlab",
+    "Jupyter-notebook",
+    "Data Science",
+    "Notebook",
+    "Python",
+    "Jupyter"
+  ],
+  "categories": [
+    "Data Science"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:jupyterlab-browser.startServer",
+    "onCommand:jupyterlab-browser.openFileInBrowser"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "menus": {
+      "editor/title": [
+        {
+          "when": "editorIsOpen == true && activeEditorIsDirty == false",
+          "command": "jupyterlab-browser.openFileInBrowser",
+          "group": "navigation"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "jupyterlab-browser.startServer",
+        "title": "Jupyterlab-Browser: Start Jupyterlab Server"
+      },
+      {
+        "command": "jupyterlab-browser.openFileInBrowser",
+        "title": "Jupyterlab-Browser: Open Current File in Browser",
+        "icon": {
+          "light": "images/icon-light.svg",
+          "dark": "images/icon-dark.svg"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.69.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "@vscode/test-electron": "^2.1.5",
+    "eslint": "^8.18.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "node-notifier": "^10.0.1"
+  }
 }
