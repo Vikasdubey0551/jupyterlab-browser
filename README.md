@@ -106,7 +106,7 @@ Response time is a bit slow. Takes about 2-3 seconds to work.
 
 * Added capability of relative path detection.
 
-### 0.0.16-0.0.20
+### 0.0.16-0.0.21
 
 * Small icon improvements.
 -----------------------------------------------------------------------------------------------------------
