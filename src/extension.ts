@@ -19,7 +19,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 		terminal.hide();
 		}
 		else{
-			let existingSession = execSync("jupyter-lab list | grep 'http' | tail -n 1 | cut -d '?' -f1").toString().trim();
+			let existingSession = execSync("jupyter-server list | grep 'http' | tail -n 1 | cut -d '?' -f1").toString().trim();
 		 	vscode.window.showInformationMessage("Jupyterlab already running\n " + existingSession);	
 		}
 		
@@ -35,11 +35,11 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 		let jupyter = isJupyterServerRunning();
 		if (!jupyter){
 		let terminal = vscode.window.createTerminal("Jupyterlab");
-		terminal.sendText("jupyter-lab --no-browser");
-		vscode.window.showInformationMessage("No session was found. So, started one. Try again in 5 seconds.");	
+		terminal.sendText("jupyter-server");
+		vscode.window.showInformationMessage("No session was found. So, started one. Try again now.");	
 		}
 		else{
-			let existingSession = execSync("jupyter-lab list | grep 'http' | tail -n 1 | cut -d ' ' -f1").toString().trim();
+			let existingSession = execSync("jupyter-server list | grep 'http' | tail -n 1 | cut -d ' ' -f1").toString().trim();
 			let token = existingSession.split("?").at(-1);
 			let session = existingSession.split("?").at(0);
 			let file = vscode.window.activeTextEditor?.document.uri.fsPath;
@@ -55,7 +55,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 
 
 function isJupyterServerRunning() {
-	let data = execSync("jupyter-lab list | grep 'http' | wc -l").toString().trim();
+	let data = execSync("jupyter-server list | grep 'http' | wc -l").toString().trim();
 	let jupyterServerRunning: Boolean = true;
 
 	if (data === "0") {
